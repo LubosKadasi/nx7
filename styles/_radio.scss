@@ -31,6 +31,7 @@
         opacity: .9;
         overflow: hidden;
         position: relative;
+        transition: all .3s;
         .material-icons{
             display: block;
             position: absolute;
@@ -41,6 +42,7 @@
             opacity: 0;
         }
         &.play{
+            opacity: 1;
             .material-icons{
                 opacity: 1;
             }
