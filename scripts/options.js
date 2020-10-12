@@ -24,19 +24,19 @@ export default {
     radio: [
         {
             name: "Junior",
-            src: "http://live.slovakradio.sk:8000/Junior_256.mp3",
+            src: "https://icecast.stv.livebox.sk/junior_128.mp3",
             color: "#fff",
             bgcolor: "#daa520",
         },
         {
             name: "_FM",
-            src: "http://live.slovakradio.sk:8000/FM_256.mp3",
+            src: "https://icecast.stv.livebox.sk/fm_128.mp3",
             color: "#fff",
             bgcolor: "#e3002b",
         },
         {
             name: "Slovensko",
-            src: "http://live.slovakradio.sk:8000/Slovensko_128.mp3",
+            src: "https://icecast.stv.livebox.sk/slovensko_128.mp3",
             color: "#fff",
             bgcolor: "#3a9dd8",
         }

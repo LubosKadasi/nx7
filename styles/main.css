@@ -288,6 +288,7 @@ nav {
   opacity: 0.9;
   overflow: hidden;
   position: relative;
+  transition: all 0.3s;
 }
 .radio__button .material-icons {
   display: block;
@@ -297,6 +298,9 @@ nav {
   font-size: 3rem;
   transition: all 0.3s;
   opacity: 0;
+}
+.radio__button.play {
+  opacity: 1;
 }
 .radio__button.play .material-icons {
   opacity: 1;
