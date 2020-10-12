@@ -83,10 +83,12 @@ document.querySelectorAll('.radio__button').forEach(item => {
                 item.classList.remove('play');
             }
         } else if (player.getAttribute('src') == '') {
+            player.crossOrigin = "anonymous";
             player.setAttribute('src', player_src);
             player.play();
             item.classList.add('play');
         } else {
+            player.crossOrigin = "anonymous";
             player.setAttribute('src', player_src);
             player.play();
             document.querySelector('.radio__button.play').classList.remove('play');
