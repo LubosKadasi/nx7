@@ -14,7 +14,7 @@
     "prefer_related_applications": false,
     "icons": [
         {
-            "src": "https://luboskadasi.github.io/icons/nx7-icon.png",
+            "src": "https://luboskadasi.github.io/nx7/icons/nx7-icon.png",
             "sizes": "512x512",
             "type": "image/png"
         }
