@@ -30,26 +30,19 @@
         margin: 0 1.25rem 1.25rem 0;
         opacity: .9;
         overflow: hidden;
+        position: relative;
         .material-icons{
             display: block;
-            font-size: 4rem;
-            margin: 1.5rem 0;
+            position: absolute;
+            top: .5rem;
+            right: .5rem;
+            font-size: 3rem;
             transition: all .3s;
-            opacity: .5;
-            transform: scale(1);
-            & + .material-icons{
-                display: none;
-            }
+            opacity: 0;
         }
         &.play{
-            opacity: 1;
             .material-icons{
-                display: none;
                 opacity: 1;
-                transform: scale(1.5);
-                & + .material-icons{
-                    display: block;
-                }
             }
         }
     }

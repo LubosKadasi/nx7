@@ -79,6 +79,7 @@ document.querySelectorAll('.radio__button').forEach(item => {
                 item.classList.add('play');
             } else {
                 player.pause();
+                player.currentTime = 0;
                 item.classList.remove('play');
             }
         } else if (player.getAttribute('src') == '') {
