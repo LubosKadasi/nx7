@@ -3,6 +3,7 @@ import options from './options.js';
 import { digitalClocks, getMeniny } from './_digitalclocks.js';
 import { getForecast } from './_weather.js';
 import { changeBgImage } from './_bgimage.js';
+import { getRadios } from './_radios.js';
 
 /* 
     Init 
@@ -11,6 +12,7 @@ import { changeBgImage } from './_bgimage.js';
 changeBgImage();
 getMeniny();
 getForecast();
+getRadios();
 
 
 /*
@@ -63,8 +65,35 @@ document.querySelectorAll('[data-target-section]').forEach(item => {
             document.querySelector(section_id).classList.add('show');
         }
     })
-}); 
+});
 
+document.querySelectorAll('.radio__button').forEach(item => {
+    item.addEventListener('click', event => {
+        
+        var player_src = item.getAttribute('data-src'),
+            player = document.getElementById('radio-player');
+
+        if (player.getAttribute('src') == player_src){
+            if (player.paused){
+                player.play();
+                item.classList.add('play');
+            } else {
+                player.pause();
+                item.classList.remove('play');
+            }
+        } else if (player.getAttribute('src') == '') {
+            player.setAttribute('src', player_src);
+            player.play();
+            item.classList.add('play');
+        } else {
+            player.setAttribute('src', player_src);
+            player.play();
+            document.querySelector('.radio__button.play').classList.remove('play');
+            item.classList.add('play');
+        }
+
+    })
+}); 
 
 
 

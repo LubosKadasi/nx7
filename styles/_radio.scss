@@ -10,40 +10,47 @@
         flex-basis: 100%;
     }
     &__inner{
+    }
+    &__radios{
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
-        justify-content: space-between;
         align-items: flex-start;
-    }
-    &__radios{
-        flex-grow: 1;
+        //flex-grow: 1;
     }
     &__button{
         appearance: none;
-        width: 25%;
-        height: 33%;
+        display: block;
+        width: calc(25% - 1.25rem);
+        height: 30vh;
         color: $baseinv;
         background-color: $base;
         border: none;
-        font-size: 2rem;
+        font-size: 1.5rem;
+        margin: 0 1.25rem 1.25rem 0;
+        opacity: .9;
+        overflow: hidden;
         .material-icons{
             display: block;
-            font-size: 3rem;
-            margin-bottom: 1rem;
+            font-size: 4rem;
+            margin: 1.5rem 0;
+            transition: all .3s;
             opacity: .5;
+            transform: scale(1);
+            & + .material-icons{
+                display: none;
+            }
         }
-        &--junior{
-            background-image: linear-gradient(to right, #f4333e,#f37a37,#8bc63f,#9197ca,#ea4098,#781b80); 
-            color: #fff;
-        }
-        &--fm{
-            background-color: $ro-fm;
-            color: #fff;
-        }
-        &--slovensko{
-            background-color: $ro-slovensko;
-            color: #fff;
+        &.play{
+            opacity: 1;
+            .material-icons{
+                display: none;
+                opacity: 1;
+                transform: scale(1.5);
+                & + .material-icons{
+                    display: block;
+                }
+            }
         }
     }
 }

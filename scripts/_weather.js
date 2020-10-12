@@ -59,7 +59,7 @@ forecast.onreadystatechange = function() {
                     </div>
                 `;
 
-            }
+        }
 
         document.getElementById("forecast").innerHTML = forecast_content;
 

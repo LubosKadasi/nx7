@@ -20,5 +20,25 @@ export default {
         "13n": "snowy-6",	
         "50d": "day", 	            //mist 
         "50n": "night" 	
-    }
+    },
+    radio: [
+        {
+            name: "Junior",
+            src: "http://live.slovakradio.sk:8000/Junior_256.mp3",
+            color: "#fff",
+            bgcolor: "#daa520",
+        },
+        {
+            name: "_FM",
+            src: "http://live.slovakradio.sk:8000/FM_256.mp3",
+            color: "#fff",
+            bgcolor: "#e3002b",
+        },
+        {
+            name: "Slovensko",
+            src: "http://live.slovakradio.sk:8000/Slovensko_128.mp3",
+            color: "#fff",
+            bgcolor: "#3a9dd8",
+        }
+    ]
 };

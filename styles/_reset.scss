@@ -13,3 +13,9 @@ html{
     font-family: 'Material Icons Outlined';
     display: inline-block;
 }
+
+a, button{
+    &:hover,&:focus{
+        outline: none;
+    }
+}
