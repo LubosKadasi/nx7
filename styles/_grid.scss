@@ -1,0 +1,52 @@
+/*grid*/
+
+html, body{
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-color: $baseinv;
+}
+
+.wrapper{
+    &--main{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+header{
+    display: none;
+    width: 100%;
+}
+
+footer{
+    display: none;
+    width: 100%;
+}
+
+aside{
+    display: none;
+}
+
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow: hidden;
+}
+
+nav{
+    background-color: rgba($baseinv, 80%);
+    display: flex;
+    flex-direction: column;
+    overflow: auto;
+    height: 100%;
+    padding: .5rem 0;
+    flex-basis: 5rem;
+    z-index: 1000;
+}

@@ -1,0 +1,13 @@
+.section--home__inner {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clocks--digital__time {
+  font-size: 17rem;
+}
+.clocks--digital__date {
+  font-size: 2rem;
+}

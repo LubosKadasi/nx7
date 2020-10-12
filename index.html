@@ -4,8 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>nx7</title>
+
+    <!-- External -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+    <!-- /External -->
+    
+    <link rel="stylesheet" href="styles/main.css">
+
 </head>
-<body>
+<body id="bg-image">
+
+    <div class="wrapper--main">
+
+        <header>header</header>
+
+        <main>
+            <nav>
+                <a data-target-section="#section-home" class="section__link show"><span class="material-icons">home</span> </a>
+                <a data-target-section="#section-forecast" class="section__link"><span class="material-icons">filter_drama</span></a>
+                <a data-target-section="#section-radio" class="section__link"><span class="material-icons">radio</span></a>
+                <a data-target-section="#section-calendar" class="section__link"><span class="material-icons">today</span></a>
+                <a data-target-section="#section-devices" class="section__link"><span class="material-icons">desktop_windows</span></a>  
+                <a data-target-section="#section-settings" class="section__link"><span class="material-icons">settings</span></a>  
+            </nav>
+            
+            <div class="sections__wrapper">
+
+                <section id="section-home" class="section section--home show">
+                    <div class="section__inner section--home__inner">
+                        <div class="clocks--digital__wrapper">
+                            <div id="clocks-digital" class="clocks--digital__time">00:00</div>
+                            <div class="clocks--digital__more" data-target-section="#section-calendar">
+                                <span id="clocks-date" class="clocks--digital__date">streda 7. 10.</span>
+                                <span id="clocks-meniny" class="clocks--digital__meniny">Popolvár</span>
+                            </div>
+                        </div>
+                        <div id="weather-home" class="weather--home__wrapper" data-target-section="#section-forecast"></div>
+                        <div id="forecast-home" class="forecast--home__wrapper" data-target-section="#section-forecast"></div>
+                    </div>
+                </section>
+
+                <section id="section-forecast" class="section section--forecast">
+                    <div class="section__inner section--forecast__inner">
+                        <h2 class="section__headline">Počasie</h2>
+                        <div class="forecast__wrapper">
+                            <div id="forecast" class="forecast__inner"></div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-radio" class="section section--radio">
+                    <div class="section__inner section--radio__inner">
+                        <h2 class="section__headline">Rádio</h2>
+                        <div class="radio__radios">
+                            <button type="button" class="radio__button radio__button--junior">
+                                <span class="material-icons">play_circle_outline</span>
+                                Junior
+                            </button>
+                            <button type="button" class="radio__button radio__button--fm">
+                                <span class="material-icons">play_circle_outline</span>
+                                _FM
+                            </button>
+                            <button type="button" class="radio__button radio__button--slovensko">
+                                <span class="material-icons">play_circle_outline</span>
+                                Slovensko
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="section-calendar" class="section section--calendar">
+                    <div class="section__inner section--calendar__inner">
+                        <h2 class="section__headline">Kalendár</h2>
+                    </div>
+                </section>
+
+                <section id="section-devices" class="section section--devices">
+                    <div class="section__inner section--devices__inner">
+                        <h2 class="section__headline">Zariadenia</h2>
+                    </div>
+                </section>
+
+                <section id="section-settings" class="section section--settings">
+                    <div class="section__inner section--settings__inner">
+                        <h2 class="section__headline">Nastavenia</h2>
+                        <div id="app-updated"></div>
+                    </div>
+                    
+                </section>
+            </div>
+        </main>
+
+        <aside>aside</aside>
+
+        <footer>footer</footer>
+
+    </div>
+<!-- 
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+-->
+    <script type="module" src="scripts/scripts.js?v=020"></script>
+
     
 </body>
 </html>

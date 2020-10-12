@@ -1,0 +1,49 @@
+.section--radio__inner{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+
+.radio{
+    &__wrapper{
+        flex-basis: 100%;
+    }
+    &__inner{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+    &__radios{
+        flex-grow: 1;
+    }
+    &__button{
+        appearance: none;
+        width: 25%;
+        height: 33%;
+        color: $baseinv;
+        background-color: $base;
+        border: none;
+        font-size: 2rem;
+        .material-icons{
+            display: block;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            opacity: .5;
+        }
+        &--junior{
+            background-image: linear-gradient(to right, #f4333e,#f37a37,#8bc63f,#9197ca,#ea4098,#781b80); 
+            color: #fff;
+        }
+        &--fm{
+            background-color: $ro-fm;
+            color: #fff;
+        }
+        &--slovensko{
+            background-color: $ro-slovensko;
+            color: #fff;
+        }
+    }
+}

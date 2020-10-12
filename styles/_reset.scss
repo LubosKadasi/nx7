@@ -1,0 +1,15 @@
+/*reset*/
+
+html{
+    font-family: 'Roboto', sans-serif;
+    color: $base;
+}
+
+*, *::before, *::after{
+    box-sizing: border-box;
+}
+
+.material-icons{
+    font-family: 'Material Icons Outlined';
+    display: inline-block;
+}
