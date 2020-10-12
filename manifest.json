@@ -1,0 +1,24 @@
+{
+    "dir": "ltr",
+    "lang": "Slovak",
+    "name": "nx7",
+    "short_name": "nx7",
+    "scope": "/nx7/",
+    "display": "fullscreen",
+    "start_url": "https://luboskadasi.github.io/nx7/",
+    "background_color": "#000",
+    "theme_color": "#daa520",
+    "description": "Nexus 7 home clocks project",
+    "orientation": "any",
+    "related_applications": [],
+    "prefer_related_applications": false,
+    "icons": [
+        {
+            "src": "https://luboskadasi.github.io/icons/nx7-icon.png",
+            "sizes": "512x512",
+            "type": "image/png"
+        }
+    ],
+    "url": "https://luboskadasi.github.io/nx7/",
+    "screenshots": []
+}

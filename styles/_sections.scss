@@ -37,6 +37,7 @@
         padding: 1rem 1rem;
         width: 100%;
         text-align: center;
+        cursor: pointer;
         &.show{
             opacity: 1;
             color: $primary;

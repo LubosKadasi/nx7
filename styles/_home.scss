@@ -65,13 +65,14 @@
         }
     }
     &__wind{
-        flex-basis: 50%;
+        //flex-basis: 50%;
+        margin-right: .5rem;
         display: flex;
         align-items: center;
         white-space: nowrap;
     }
     &__hum{
-        flex-basis: 50%;
+        //flex-basis: 50%;
         display: flex;
         align-items: center;
     }
@@ -79,7 +80,8 @@
         flex-basis: 100%;
         display: flex;
         &rise{
-            flex-basis: 50%;
+            margin-right: .5rem;
+            //flex-basis: 50%;
             display: flex;
             align-items: center;
             .material-icons{
@@ -96,7 +98,7 @@
             }
         }
         &set{
-            flex-basis: 50%;
+            //flex-basis: 50%;
             display: flex;
             align-items: center;
             .material-icons{
