@@ -70,24 +70,23 @@ document.querySelectorAll('[data-target-section]').forEach(item => {
 document.querySelectorAll('.radio__button').forEach(item => {
     item.addEventListener('click', event => {
         
-        var player_src = item.getAttribute('data-src'),
+        var radio_src = item.getAttribute('data-src'),
             player = document.getElementById('radio-player');
 
-        if (player.getAttribute('src') == player_src){
+        if (player.getAttribute('src') == radio_src){
             if (player.paused){
                 player.play();
                 item.classList.add('play');
             } else {
                 player.pause();
-                player.currentTime = 0;
                 item.classList.remove('play');
             }
         } else if (player.getAttribute('src') == '') {
-            player.setAttribute('src', player_src);
+            player.setAttribute('src', radio_src);
             player.play();
             item.classList.add('play');
         } else {
-            player.setAttribute('src', player_src);
+            player.setAttribute('src', radio_src);
             player.play();
             document.querySelector('.radio__button.play').classList.remove('play');
             item.classList.add('play');
