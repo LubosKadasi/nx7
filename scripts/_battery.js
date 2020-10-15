@@ -38,6 +38,5 @@ function monitorBattery(battery) {
 if ('getBattery' in navigator) {
     navigator.getBattery().then(monitorBattery);
 } else {
-    ChromeSamples.setStatus('The Battery Status API is not supported on ' +
-        'this platform.');
+    //
 }
