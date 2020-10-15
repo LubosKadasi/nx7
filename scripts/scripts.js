@@ -5,7 +5,7 @@ import { getForecast } from './_weather.js';
 import { changeBgImage } from './_bgimage.js';
 import { } from './_radios.js';
 import { } from './_nav.js';
-import { } from './_battery.js';
+//import { } from './_battery.js';
 import { } from './_cpanel.js';
 
 /* 
