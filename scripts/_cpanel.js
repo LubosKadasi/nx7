@@ -15,6 +15,16 @@ Object.keys(options.cpanel).forEach(key => {
         `;
 });
 
+var pcCommand = new XMLHttpRequest();
+pcCommand.onreadystatechange = function () {
+    if (this.readyState == 4 && this.status == 200) {
+        //ok
+    } else {
+        //no ok
+        console.log('pc asi haja');
+    }
+};
+
 function sendCommand(command){
     pcCommand.open("GET", command, true);
     pcCommand.send();
@@ -24,7 +34,8 @@ document.getElementById("cpanel").innerHTML = buttons;
 
 document.querySelectorAll('.devices__button').forEach( item => {
     item.addEventListener('click', function(){
-        let cmd = this.dataset.command;
+        let cmd = item.dataset.cmd;
+        console.log(cmd);
         sendCommand(cmd);
     });
 })
