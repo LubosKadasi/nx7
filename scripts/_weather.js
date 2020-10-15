@@ -65,13 +65,18 @@ forecast.onreadystatechange = function() {
 
         for (let i = 0; i < 12; i++){
 
-            var _time = new Date(data.hourly[i].dt * 1000);
+            var _time = new Date(data.hourly[i].dt * 1000),
+                _temp = '';
+
+            if (data.hourly[i].temp <= 0 ) {
+                _temp = 'minus';
+            }
 
             forecast_home += `
                     <div class="forecast__hour">
                         <img class="forecast__icon" src="icons/static/${options.w_icons[data.hourly[i].weather[0].icon]}.svg" width="50" height="50" alt="" />
                         <div class="forecast__time">${_time.toLocaleTimeString('sk-SK', options.timeOptions)}</div>
-                        <div class="forecast__temp" style="bottom:${data.hourly[i].temp.toFixed(1)}px;"></div>
+                        <div class="forecast__temp ${_temp}" style="bottom:${data.hourly[i].temp.toFixed(1)}px;"></div>
                     </div>
                 `;
 

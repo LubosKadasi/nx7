@@ -142,5 +142,8 @@
         width: 100%;
         border-top: 1px solid rgba($primary, .5);
         transform: translateY(calc(100% + 1rem));
+        &.minus{
+            border-color: rgba($base, .5);
+        }
     }
 }

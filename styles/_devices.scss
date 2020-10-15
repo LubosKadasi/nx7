@@ -1,0 +1,42 @@
+.section--devices__inner{
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 100%;
+}
+
+.devices{
+    &__wrapper{
+        flex-basis: 100%;
+    }
+    &__inner{
+    }
+    &__cpanel{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: flex-start;
+        //flex-grow: 1;
+    }
+    &__button{
+        appearance: none;
+        display: block;
+        width: calc(25% - 1.25rem);
+        height: 30vh;
+        color: $baseinv;
+        background-color: $base;
+        border: none;
+        font-size: 1.25rem;
+        margin: 0 1.25rem 1.25rem 0;
+        opacity: .9;
+        overflow: hidden;
+        position: relative;
+        transition: all .3s;
+        .material-icons{
+            display: block;
+            font-size: 4rem;
+            margin: 1.5rem;
+
+        }
+    }
+}

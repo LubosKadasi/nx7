@@ -2,16 +2,17 @@
 /*radios*/
 /*reset*/
 html {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #fff;
 }
 
 *, *::before, *::after {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .material-icons {
-  font-family: "Material Icons Outlined";
+  font-family: 'Material Icons Outlined';
   display: inline-block;
 }
 
@@ -29,9 +30,15 @@ html, body {
 }
 
 .wrapper--main {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
@@ -51,21 +58,35 @@ aside {
 }
 
 main {
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   overflow: hidden;
 }
 
 nav {
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: black;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: auto;
   height: 100%;
-  padding: 0.5rem 0;
-  flex-basis: 5rem;
+  padding: .5rem 0;
+  -ms-flex-preferred-size: 5rem;
+      flex-basis: 5rem;
   z-index: 1000;
 }
 
@@ -83,43 +104,58 @@ nav {
   left: 0;
   height: 100%;
   width: 100%;
-  transition: transform 0.5s;
+  -webkit-transition: -webkit-transform .5s;
+  transition: -webkit-transform .5s;
+  transition: transform .5s;
+  transition: transform .5s, -webkit-transform .5s;
   opacity: 0;
-  transform: translate3d(100%, 0, 0);
+  -webkit-transform: translate3d(100%, 0, 0);
+          transform: translate3d(100%, 0, 0);
   will-change: transform;
 }
+
 .section.show {
-  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
   opacity: 1;
 }
+
 .section.show-last {
-  transform: translate3d(-100%, 0, 0);
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
   opacity: 1;
 }
+
 .section__link {
   display: block;
-  font-size: 2rem;
+  font-size: 2.25rem;
   text-decoration: none;
   color: #fff;
-  opacity: 0.85;
-  transition: all 0.5s;
-  filter: none;
+  opacity: .85;
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  -webkit-filter: none;
+          filter: none;
   padding: 1rem 1rem;
   width: 100%;
   text-align: center;
   cursor: pointer;
 }
+
 .section__link.show {
   opacity: 1;
   color: goldenrod;
 }
+
 .section__link:nth-last-child(2) {
   margin-top: auto;
 }
+
 .section__inner {
   padding: 1.5rem;
   height: 100%;
 }
+
 .section__headline {
   width: 100%;
   margin-top: 0;
@@ -127,156 +163,274 @@ nav {
 
 .section--home__inner {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .clocks--digital__wrapper {
   text-align: center;
 }
+
 .clocks--digital__time {
   font-size: 30vw;
   line-height: 100%;
 }
+
 .clocks--digital__more {
   font-size: 2rem;
 }
+
 .clocks--digital__meniny {
   font-weight: 200;
-  padding-left: 0.5rem;
+  padding-left: .5rem;
 }
 
 .weather--home__wrapper {
   margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   width: 85%;
 }
+
 .weather__desc {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-size: 2rem;
   font-weight: 300;
   white-space: nowrap;
 }
+
 .weather__desc img {
-  transform: translate(0, 0) scale(1.5);
-  filter: sepia(75%);
+  -webkit-transform: translate(0, 0) scale(1.5);
+          transform: translate(0, 0) scale(1.5);
+  -webkit-filter: sepia(75%);
+          filter: sepia(75%);
 }
+
 .weather__temp {
   font-size: 4rem;
-  flex-grow: 1;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
   white-space: nowrap;
-  flex-basis: 60%;
+  -ms-flex-preferred-size: 60%;
+      flex-basis: 60%;
   text-align: center;
 }
+
 .weather__more {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
+
 .weather__more .material-icons {
   color: goldenrod;
   position: relative;
-  padding: 0.25rem;
+  padding: .25rem;
 }
+
 .weather__wind {
-  margin-right: 0.5rem;
+  margin-right: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   white-space: nowrap;
 }
+
 .weather__hum {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .weather__sun {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
+
 .weather__sunrise {
-  margin-right: 0.5rem;
+  margin-right: .5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .weather__sunset {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .weather__location {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
 
 .forecast--home__wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
   width: 100%;
 }
+
 .forecast--home__wrapper .forecast__hour {
   margin-bottom: 0;
   margin-top: 2rem;
   position: relative;
 }
+
 .forecast--home__wrapper img {
-  margin-top: -0.15rem;
-  filter: sepia(75%);
+  margin-top: -.15rem;
+  -webkit-filter: sepia(75%);
+          filter: sepia(75%);
 }
+
 .forecast--home__wrapper .forecast__temp {
   position: absolute;
   height: 100%;
   width: 100%;
   border-top: 1px solid rgba(218, 165, 32, 0.5);
-  transform: translateY(calc(100% + 1rem));
+  -webkit-transform: translateY(calc(100% + 1rem));
+          transform: translateY(calc(100% + 1rem));
+}
+
+.forecast--home__wrapper .forecast__temp.minus {
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .section--forecast__inner {
   overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   height: 100%;
 }
 
 .forecast__wrapper {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
   height: 100%;
   overflow: auto;
 }
+
 .forecast__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
+
 .forecast__hour {
-  flex-basis: 12%;
+  -ms-flex-preferred-size: 12%;
+      flex-basis: 12%;
   text-align: center;
   margin-bottom: 2rem;
 }
 
 .section--radio__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   overflow: hidden;
   height: 100%;
 }
 
 .radio__wrapper {
-  flex-basis: 100%;
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
 }
+
 .radio__radios {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  align-items: flex-start;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
 }
+
 .radio__button {
-  appearance: none;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
   display: block;
   width: calc(25% - 1.25rem);
   height: 30vh;
@@ -285,23 +439,115 @@ nav {
   border: none;
   font-size: 1.5rem;
   margin: 0 1.25rem 1.25rem 0;
-  opacity: 0.9;
+  opacity: .9;
   overflow: hidden;
   position: relative;
-  transition: all 0.3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
 }
+
 .radio__button .material-icons {
   display: block;
   position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
+  top: .5rem;
+  right: .5rem;
   font-size: 3rem;
-  transition: all 0.3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
   opacity: 0;
 }
+
 .radio__button.play {
   opacity: 1;
 }
+
 .radio__button.play .material-icons {
   opacity: 1;
 }
+
+.radio__button--pause {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  position: fixed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000;
+  background-color: transparent;
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 1.25rem;
+}
+
+.radio__button--pause .material-icons {
+  font-size: 3rem;
+  color: goldenrod;
+  line-height: 3rem;
+  margin-left: .25rem;
+}
+
+.section--devices__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+}
+
+.devices__wrapper {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.devices__cpanel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.devices__button {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  display: block;
+  width: calc(25% - 1.25rem);
+  height: 30vh;
+  color: #000;
+  background-color: #fff;
+  border: none;
+  font-size: 1.25rem;
+  margin: 0 1.25rem 1.25rem 0;
+  opacity: .9;
+  overflow: hidden;
+  position: relative;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.devices__button .material-icons {
+  display: block;
+  font-size: 4rem;
+  margin: 1.5rem;
+}
+/*# sourceMappingURL=main.css.map */

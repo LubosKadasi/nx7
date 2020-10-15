@@ -40,5 +40,17 @@ export default {
             color: "#fff",
             bgcolor: "#3a9dd8",
         }
-    ]
+    ],
+    cpanel: [
+        {
+            title: "Vypnúť rozprávky",
+            cmd: "https://stick/shutdown",
+            icon: "power_settings_new",
+            color: "#fff",
+            bgcolor: "#daa520",
+        }
+    ],
+    nav: {
+        nav_timeout: 15000
+    }
 };
