@@ -1,6 +1,7 @@
 export default {
     timeOptions: { hour: 'numeric', minute: '2-digit' },
     dateOptions: { weekday: 'long', month: 'numeric', day: 'numeric' },
+    dateOptionsDay: { weekday: 'long' },
     w_icons: {
         "01d": "day",   	        //clear sky
         "01n": "night", 	
@@ -51,6 +52,6 @@ export default {
         }
     ],
     nav: {
-        nav_timeout: 15000
+        nav_timeout: 150000
     }
 };

@@ -25,4 +25,69 @@
         text-align: center;
         margin-bottom: 2rem;
     }
+    &__chart{
+        display: flex;
+        width: 100%;
+        height: 500px;
+        overflow: auto;
+        padding: 0 0 1rem 0;
+    }
+    &__col{
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        justify-content: flex-end;
+        align-items: center;
+        text-align: center;
+        padding: 1px;
+        flex-basis: 5rem;
+        &--day{
+            width: 1px;
+            border-left: 1px  dashed rgba($base, .25);
+            position: sticky;
+            left: 0;
+            span{
+                display: inline-block;
+                padding: 0 .25rem;
+                font-size: 1rem;
+                text-transform: capitalize;
+            }
+        }
+        &:hover, &:focus{
+            .forecast__temp-col{
+                &--plus{
+                    background-color: rgba($primary, .5);
+                }
+                &--minus{
+                    &-col{
+                        background-color: rgba($base, .5);
+                    }
+                }
+            }
+        }
+    }
+    &__icon{
+
+    }
+    &__temp{
+        padding-bottom: .5rem;
+    }
+    &__temp-col{
+        width: 4rem;
+        &--plus{
+            background-color: rgba($primary, .25);
+        }
+        &--minus{
+            &-col{
+                background-color: rgba($base, .25);
+            }
+        }
+    }
+    &__time{
+        padding: .5rem .25rem .25rem .25rem;
+    }
+    &__wind{
+        margin-top: .5rem;
+        font-size: .75rem;
+    }
 }

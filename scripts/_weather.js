@@ -8,10 +8,10 @@ forecast.onreadystatechange = function() {
     if (this.readyState == 4 && this.status == 200) {
 
         var data = JSON.parse(this.responseText),
-            forecast_content = '',
             forecast_home = '',
             _time_sunrise = new Date(data.current.sunrise * 1000),
             _time_sunset = new Date(data.current.sunset * 1000);
+
         
         document.getElementById("weather-home").innerHTML = `
             <div class="weather__desc">
@@ -45,27 +45,71 @@ forecast.onreadystatechange = function() {
                 </div>-->
             </div>
             `;
+            
+        //document.getElementById("forecast").innerHTML = forecast_content;
+        
+        /* Forecast  Chart */
+        
+        var _temps = [],
+            _tempmin,
+            _tempmax,
+            _tempoffset = 1,
+            _tempstep;
+        
+        // get all temps
+        for (let i = 0; i < 48; i++){
+            _temps.push(parseFloat(data.hourly[i].temp.toFixed(1)));
+        }
 
+        // Test minus tempss
+        //_temps.push(-2);
+        //_temps.push(-3);
+
+        // get max & min
+        _tempmax = Math.max(..._temps);
+        _tempmin = Math.min(..._temps);
+
+        // get scale
+        _tempstep = 100 / (_tempmax + _tempoffset) - Math.abs(_tempmin - _tempoffset);
+        _tempstep = _tempstep.toFixed(2);
+
+        console.log(_temps);
+        console.log(_tempstep);
+
+        var forecast_col = '';
+        //var forecast_col = `<div class="forecast__col--day"><span>Dnes</span></div>`;
+        
         for (let i = 0; i < 48; i++){
 
-            var _time = new Date(data.hourly[i].dt * 1000);
+            let _time = new Date(data.hourly[i].dt * 1000);
 
-            forecast_content += `
-                    <div class="forecast__hour">
+            console.log(_time);
+
+            if (_time.toLocaleTimeString('sk-SK', options.timeOptions) == '0:00'){
+                forecast_col += `<div class="forecast__col--day"><span>${_time.toLocaleDateString('sk-SK', options.dateOptionsDay)}</span></div>`;
+            };
+
+            forecast_col += `
+                    <div class="forecast__col">
                         <img class="forecast__icon" src="icons/static/${options.w_icons[data.hourly[i].weather[0].icon]}.svg" width="50" height="50" alt="" />
+                        <div class="forecast__temp">${_temps[i].toFixed(1)} °C</div>
+                        <div class="forecast__temp-col forecast__temp-col--plus" style="height:${_temps[i] * _tempstep}%;"></div>
+                        <div class="forecast__temp-col forecast__temp-col--minus" style="height:${(_tempmin * -1) * _tempstep}%;">
+                            <div class="forecast__temp-col forecast__temp-col--minus-col" style="height:${ (100 / _tempmin) * _temps[i]}%">
+                        </div>
+                        </div>
                         <div class="forecast__time">${_time.toLocaleTimeString('sk-SK', options.timeOptions)}</div>
-                        <div class="forecast__temp">${data.hourly[i].temp.toFixed(1)} °C</div>
                         <div class="forecast__wind">${data.hourly[i].wind_speed.toFixed(1)} m/s</div>
                     </div>
                 `;
-
         }
+        
+        document.getElementById("forecast-chart").innerHTML = forecast_col;
 
-        document.getElementById("forecast").innerHTML = forecast_content;
 
         for (let i = 0; i < 12; i++){
 
-            var _time = new Date(data.hourly[i].dt * 1000),
+            let _time = new Date(data.hourly[i].dt * 1000),
                 _temp = '';
 
             if (data.hourly[i].temp <= 0 ) {
