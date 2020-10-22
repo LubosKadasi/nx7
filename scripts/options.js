@@ -53,6 +53,6 @@ export default {
         }
     ],
     nav: {
-        nav_timeout: 150000
+        nav_timeout: 15000
     }
 };
