@@ -2,6 +2,7 @@ export default {
     timeOptions: { hour: 'numeric', minute: '2-digit' },
     dateOptions: { weekday: 'long', month: 'numeric', day: 'numeric' },
     dateOptionsDay: { weekday: 'long' },
+    dateOptionsMonth: { month: 'long' },
     w_icons: {
         "01d": "day",   	        //clear sky
         "01n": "night", 	

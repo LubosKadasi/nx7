@@ -35,7 +35,7 @@ document.getElementById("cpanel").innerHTML = buttons;
 document.querySelectorAll('.devices__button').forEach( item => {
     item.addEventListener('click', function(){
         let cmd = item.dataset.cmd;
-        console.log(cmd);
+        //console.log(cmd);
         sendCommand(cmd);
     });
 })

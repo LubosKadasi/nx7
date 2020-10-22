@@ -73,8 +73,8 @@ forecast.onreadystatechange = function() {
         _tempstep = 100 / (_tempmax + _tempoffset) - Math.abs(_tempmin - _tempoffset);
         _tempstep = _tempstep.toFixed(2);
 
-        console.log(_temps);
-        console.log(_tempstep);
+        //console.log(_temps);
+        //console.log(_tempstep);
 
         var forecast_col = '';
         //var forecast_col = `<div class="forecast__col--day"><span>Dnes</span></div>`;
@@ -83,7 +83,7 @@ forecast.onreadystatechange = function() {
 
             let _time = new Date(data.hourly[i].dt * 1000);
 
-            console.log(_time);
+            //console.log(_time);
 
             if (_time.toLocaleTimeString('sk-SK', options.timeOptions) == '0:00'){
                 forecast_col += `<div class="forecast__col--day"><span>${_time.toLocaleDateString('sk-SK', options.dateOptionsDay)}</span></div>`;

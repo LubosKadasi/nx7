@@ -518,7 +518,7 @@ nav {
   border: none;
   font-size: 1.5rem;
   margin: 0 1.25rem 1.25rem 0;
-  opacity: .9;
+  opacity: .8;
   overflow: hidden;
   position: relative;
   -webkit-transition: all .3s;
@@ -624,9 +624,81 @@ nav {
   transition: all .3s;
 }
 
+.devices__button:hover, .devices__button:focus {
+  opacity: 1;
+}
+
 .devices__button .material-icons {
   display: block;
   font-size: 4rem;
   margin: 1.5rem;
+}
+
+.section--calendar__inner {
+  overflow: hidden;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  height: 100%;
+}
+
+.calendar__wrapper {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.calendar__month {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.calendar__month__header {
+  text-transform: capitalize;
+}
+
+.calendar__day {
+  width: calc(100% / 7);
+  padding: 1rem;
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+.calendar__day:nth-of-type(7n-1) {
+  opacity: .65;
+}
+
+.calendar__day:nth-of-type(7n+0) {
+  opacity: .65;
+}
+
+.calendar__day.today {
+  color: goldenrod;
+}
+
+.calendar__day__header {
+  margin: 0 0 1rem 0;
 }
 /*# sourceMappingURL=main.css.map */

@@ -1,0 +1,52 @@
+.section--calendar__inner{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: stretch;
+    height: 100%;
+}
+
+.calendar{
+    &__wrapper{
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        display: flex;
+    }
+    &__year{
+        &__header{
+
+        }
+        &__inner{
+        
+        }
+    }
+    &__month{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        &__header{
+            text-transform: capitalize;
+        }
+    }
+    &__day{
+        width: calc(100% / 7);
+        padding: 1rem;
+        font-size: 1.25rem;
+        text-align: center;
+        &:nth-of-type(7n-1){
+            opacity: .65;
+        }
+        &:nth-of-type(7n+0){
+            opacity: .65;
+        }
+        &.today{
+            color: $primary;
+        }
+        &__header{
+            margin: 0 0 1rem 0;
+        }
+    }
+}
