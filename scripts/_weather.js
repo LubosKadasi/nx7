@@ -53,7 +53,7 @@ forecast.onreadystatechange = function() {
         var _temps = [],
             _tempmin,
             _tempmax,
-            _tempoffset = 1,
+            _tempoffset = 15,
             _tempstep;
         
         // get all temps
@@ -61,25 +61,26 @@ forecast.onreadystatechange = function() {
             _temps.push(parseFloat(data.hourly[i].temp.toFixed(1)));
         }
 
-        // Test minus tempss
-        //_temps.push(-2);
-        //_temps.push(-3);
+        // Test temps scale
+        //_temps[1] = -2;
+        //_temps[2] = -3;
+        //_temps[3] = 33;
 
         // get max & min
         _tempmax = Math.max(..._temps);
         _tempmin = Math.min(..._temps);
 
         // get scale
-        _tempstep = 100 / (_tempmax + _tempoffset) - Math.abs(_tempmin - _tempoffset);
+        _tempstep = 100 / ((_tempmax - _tempmin) + _tempoffset);
         _tempstep = _tempstep.toFixed(2);
 
         //console.log(_temps);
-        //console.log(_tempstep);
+        console.log(_tempstep);
 
         var forecast_col = '';
         //var forecast_col = `<div class="forecast__col--day"><span>Dnes</span></div>`;
         
-        for (let i = 0; i < 48; i++){
+        for (let i = 0; i < _temps.length; i++){
 
             let _time = new Date(data.hourly[i].dt * 1000);
 
