@@ -107,6 +107,17 @@ forecast.onreadystatechange = function() {
         
         document.getElementById("forecast-chart").innerHTML = forecast_col;
 
+        // hide stick day label
+        var intersectionObserver = new IntersectionObserver(function(entry) {
+            var _sday = document.getElementsByClassName('forecast__col--day')[0];
+            if (entry[0].intersectionRatio >= 1) {
+                _sday.classList.add('hide');
+            } else {
+                _sday.classList.remove('hide');
+            }
+        });
+        intersectionObserver.observe(document.getElementsByClassName('forecast__col--day')[1]);
+
 
         for (let i = 0; i < 12; i++){
 
@@ -137,6 +148,7 @@ forecast.onreadystatechange = function() {
         //console.log(this);
     }
 };
+
 
 export function getForecast(){
     forecast.open("GET", "//api.openweathermap.org/data/2.5/onecall?lat=48.33&lon=17.17&exclude=minutely,daily&appid=b1c74e01998f6dc8db3e4c990f5f6964&units=metric&lang=sk", true);

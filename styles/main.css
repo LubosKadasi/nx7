@@ -432,6 +432,9 @@ nav {
   position: -webkit-sticky;
   position: sticky;
   left: 0;
+  opacity: 1;
+  -webkit-transition: opacity .3s;
+  transition: opacity .3s;
 }
 
 .forecast__col--day span {
@@ -439,6 +442,10 @@ nav {
   padding: 0 .25rem;
   font-size: 1rem;
   text-transform: capitalize;
+}
+
+.forecast__col--day.hide {
+  opacity: 0;
 }
 
 .forecast__col:hover .forecast__temp-col--plus, .forecast__col:focus .forecast__temp-col--plus {

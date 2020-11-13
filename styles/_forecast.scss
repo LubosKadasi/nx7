@@ -46,11 +46,16 @@
             border-left: 1px  dashed rgba($base, .25);
             position: sticky;
             left: 0;
+            opacity: 1;
+            transition: opacity .3s;
             span{
                 display: inline-block;
                 padding: 0 .25rem;
                 font-size: 1rem;
                 text-transform: capitalize;
+            }
+            &.hide{
+                opacity: 0;
             }
         }
         &:hover, &:focus{
